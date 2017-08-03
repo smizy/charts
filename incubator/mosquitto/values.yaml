@@ -1,0 +1,31 @@
+# Default values for phpmyadmin.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image: smizy/mosquitto:1.4.12-alpine
+
+imagePullPolicy: IfNotPresent
+
+ingress:
+  enabled: false
+
+service:
+  enabled: true
+  type: "ClusterIP"
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 2Gi
+  storageClass: standard
+  
+resources:
+  requests:
+    cpu: 50m
+    memory: 100Mi
+
+config: |-
+  log_dest stdout
+  listener 1883
+  listener 9090
+  protocol websockets

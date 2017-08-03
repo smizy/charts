@@ -1,0 +1,11 @@
+name: mosquitto
+version: 0.1.0
+appVersion: 1.4.12
+description: Mosquitto
+keywords:
+- mosquitto
+sources:
+- https://github.com/smizy/charts/
+maintainers:
+- name: smizy
+engine: gotpl
