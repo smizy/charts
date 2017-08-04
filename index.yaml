@@ -2,7 +2,22 @@ apiVersion: v1
 entries:
   mosquitto:
   - appVersion: 1.4.12
-    created: 2017-08-04T12:22:21.054945332+09:00
+    created: 2017-08-04T15:14:30.521556783+09:00
+    description: Mosquitto
+    digest: 8b7d47e13f1fa20678272c892fd088869f39675b49dbe41995f9e3dd19d16642
+    engine: gotpl
+    keywords:
+    - mosquitto
+    maintainers:
+    - name: smizy
+    name: mosquitto
+    sources:
+    - https://github.com/eclipse/mosquitto/tree/master/docker
+    urls:
+    - mosquitto-0.1.2.tgz
+    version: 0.1.2
+  - appVersion: 1.4.12
+    created: 2017-08-04T15:14:30.521191279+09:00
     description: Mosquitto
     digest: 767779f6b700d647dd06453b321cec257fe52bf699572b50bb821f12eb868ca6
     engine: gotpl
@@ -14,26 +29,43 @@ entries:
     sources:
     - https://github.com/smizy/charts/
     urls:
-    - https://smizy.github.io/charts/mosquitto-0.1.1.tgz
+    - mosquitto-0.1.1.tgz
     version: 0.1.1
-  - appVersion: 1.4.12
-    created: 2017-08-04T12:22:21.054370323+09:00
-    description: Mosquitto
-    digest: 4b11eb6b20b2bf426a99c2053304cca8ba9cd8803fb143396c6db260f142003e
+  nfs-provisioner:
+  - created: 2017-08-04T15:14:30.521945981+09:00
+    description: nfs-provisioner
+    digest: 6336fa8182750c703e383b51e96c43f000625dd7fa2ce854a1fad4656a14f281
     engine: gotpl
     keywords:
-    - mosquitto
+    - nfs-provisioner
     maintainers:
     - name: smizy
-    name: mosquitto
+    name: nfs-provisioner
     sources:
-    - https://github.com/smizy/charts/
+    - https://github.com/kubernetes-incubator/external-storage/tree/master/nfs
     urls:
-    - https://smizy.github.io/charts/mosquitto-0.1.0.tgz
+    - nfs-provisioner-0.1.0.tgz
     version: 0.1.0
   phpmyadmin:
   - appVersion: 4.7.3
-    created: 2017-08-04T12:22:21.056360403+09:00
+    created: 2017-08-04T15:14:30.522593884+09:00
+    description: phpmyadmin
+    digest: 90b8ae5b61e3d36cc1e6cf0697226bacbbff8c8692c41c1e4958e8abf75137bf
+    engine: gotpl
+    keywords:
+    - phpmyadmin
+    - mysql
+    - mariadb
+    maintainers:
+    - name: smizy
+    name: phpmyadmin
+    sources:
+    - https://github.com/phpmyadmin/docker
+    urls:
+    - phpmyadmin-0.1.2.tgz
+    version: 0.1.2
+  - appVersion: 4.7.3
+    created: 2017-08-04T15:14:30.522236058+09:00
     description: phpmyadmin
     digest: ed1a6aea938b9527ea81c9cfdb31560753867540a5cb615dbd3d7ea55c66ab81
     engine: gotpl
@@ -47,23 +79,6 @@ entries:
     sources:
     - https://github.com/smizy/charts/
     urls:
-    - https://smizy.github.io/charts/phpmyadmin-0.1.1.tgz
+    - phpmyadmin-0.1.1.tgz
     version: 0.1.1
-  - appVersion: 4.7.3
-    created: 2017-08-04T12:22:21.055931406+09:00
-    description: phpmyadmin
-    digest: 5d358580882d749ecb777a4ce4782872306cdfdb7c8389d3126f47b7b9582d4a
-    engine: gotpl
-    keywords:
-    - phpmyadmin
-    - mysql
-    - mariadb
-    maintainers:
-    - name: smizy
-    name: phpmyadmin
-    sources:
-    - https://github.com/smizy/charts/
-    urls:
-    - https://smizy.github.io/charts/phpmyadmin-0.1.0.tgz
-    version: 0.1.0
-generated: 2017-08-04T12:22:21.053133436+09:00
+generated: 2017-08-04T15:14:30.520635+09:00
