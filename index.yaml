@@ -1,0 +1,19 @@
+apiVersion: v1
+entries:
+  mosquitto:
+  - appVersion: 1.4.12
+    created: 2017-08-04T10:43:53.397755886+09:00
+    description: Mosquitto
+    digest: 7b259c13ac00c7fbef8e70eae58a46400c54641a1d79aae4d63ab4b10a410a47
+    engine: gotpl
+    keywords:
+    - mosquitto
+    maintainers:
+    - name: smizy
+    name: mosquitto
+    sources:
+    - https://github.com/smizy/charts/
+    urls:
+    - https://smizy.github.io/charts/mosquitto-0.1.0.tgz
+    version: 0.1.0
+generated: 2017-08-04T10:43:53.397187086+09:00
