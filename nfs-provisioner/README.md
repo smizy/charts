@@ -77,7 +77,7 @@ $ helm install --name my-release -f values.yaml smizy/nfs-provisioner
 
 ## Persistence
 
-The [nfs-provisioner](https://quay.io/kubernetes_incubator/nfs-provisioner) image stores the nfs-provisioner data and configurations at the `/export` path of the container.
+The [nfs-provisioner](https://quay.io/kubernetes_incubator/nfs-provisioner) image stores the nfs-provisioner data at the `/export` path of the container.
 
 The chart mounts a [Persistent Volume](kubernetes.io/docs/user-guide/persistent-volumes/) volume at this location. The volume is created using dynamic volume provisioning.
 

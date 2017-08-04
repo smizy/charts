@@ -95,6 +95,6 @@ helm install --name my-release -f mosquitto-values.yaml smizy/mosquitto
 
 ## Persistence
 
-The [mosquitto](https://hub.docker.com/r/_/eclipse-mosquitto/) image stores the mosquitto data and configurations at the `/mosquitto/data` path of the container.
+The [mosquitto](https://hub.docker.com/r/_/eclipse-mosquitto/) image stores the mosquitto data at the `/mosquitto/data` path of the container.
 
 The chart mounts a [Persistent Volume](kubernetes.io/docs/user-guide/persistent-volumes/) volume at this location. The volume is created using dynamic volume provisioning.
