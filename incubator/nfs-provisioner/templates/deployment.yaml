@@ -1,0 +1,64 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - image: {{ .Values.image }}
+        imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        name: {{ template "fullname" . }}
+        ports:
+        - name: nfs
+          containerPort: 2049
+        - name: mountd
+          containerPort: 20048
+        - name: rpcbind
+          containerPort: 111
+        - name: rpcbind-udp
+          containerPort: 111
+          protocol: UDP
+        securityContext:
+          capabilities:
+            add:
+              - DAC_READ_SEARCH
+              - SYS_RESOURCE
+        args:
+          - "-provisioner={{ .Values.nfs.provisioner }}"
+          - "-grace-period=10"
+        env:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: SERVICE_NAME
+          value: {{ template "fullname" . }}
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        volumeMounts:
+          - name: export-volume
+            mountPath: /export
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+      volumes:
+      - name: export-volume
+      {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ template "fullname" . }}
+      {{- else }}
+        emptyDir: {}
+      {{- end -}}

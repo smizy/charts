@@ -1,0 +1,11 @@
+name: nfs-provisioner
+version: 0.1.0
+# appVersion: 
+description: nfs-provisioner
+keywords:
+- nfs-provisioner
+sources:
+- https://github.com/kubernetes-incubator/external-storage/tree/master/nfs
+maintainers:
+- name: smizy
+engine: gotpl
