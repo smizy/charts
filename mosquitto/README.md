@@ -12,7 +12,7 @@ $ helm install smizy/mosquitto
 
 ## Introduction
 
-This chart bootstraps a [mosquitto](https://github.com/eclipse/mosquitto) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [mosquitto](https://github.com/smizy/docker-mosquitto) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ The following tables lists the configurable parameters of the mosquitto chart an
 
 |         Parameter          |                Description                 |                   Default                   |
 |----------------------------|--------------------------------------------|---------------------------------------------|
-| `image`                    | mosquitto image                            | `eclipse/mosquitto:{VERSION}`                   |
+| `image`                    | mosquitto image                            | `smizy/mosquitto:{VERSION}`                   |
 | `imagePullPolicy`          | Image pull policy.                         | `IfNotPresent`                              |
 | `persistence.enabled`      | Use a PVC to persist data                  | `true`                                      |
 | `persistence.storageClass` | Storage class of backing PVC               | `standard`  |
@@ -95,6 +95,6 @@ helm install --name my-release -f mosquitto-values.yaml smizy/mosquitto
 
 ## Persistence
 
-The [mosquitto](https://hub.docker.com/r/_/eclipse-mosquitto/) image stores the mosquitto data at the `/mosquitto/data` path of the container.
+The [mosquitto](https://github.com/smizy/docker-mosquitto) image stores the mosquitto data at the `/mosquitto/data` path of the container.
 
 The chart mounts a [Persistent Volume](kubernetes.io/docs/user-guide/persistent-volumes/) volume at this location. The volume is created using dynamic volume provisioning.

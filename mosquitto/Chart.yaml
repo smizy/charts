@@ -1,11 +1,11 @@
 name: mosquitto
-version: 0.1.2
+version: 0.1.3
 appVersion: 1.4.12
 description: Mosquitto
 keywords:
 - mosquitto
 sources:
-- https://github.com/eclipse/mosquitto/tree/master/docker
+- https://github.com/smizy/docker-mosquitto
 maintainers:
 - name: smizy
 engine: gotpl
