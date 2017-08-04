@@ -50,7 +50,6 @@ The following tables lists the configurable parameters of the phpMyAdmin chart a
 | `image`                    | phpMyAdmin image                            | `smizy/phpmyadmin:{VERSION}`                   |
 | `imagePullPolicy`          | Image pull policy.                         | `IfNotPresent`                              |
 | `resources`                | CPU/Memory resource requests/limits        | Memory: `100Mi`, CPU: `50m`                |
-                                      |
 
 The above parameters map to the env variables defined in [smizy/phpmyadmin](http://github.com/smizy/docker-phpmyadmin). For more information please refer to the [smizy/docker-phpmyadmin](http://github.com/smizy/docker-phpmyadmin) image documentation.
 

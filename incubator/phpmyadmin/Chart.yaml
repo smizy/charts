@@ -1,5 +1,5 @@
 name: phpmyadmin
-version: 0.1.1
+version: 0.1.2
 appVersion: 4.7.3
 description: phpmyadmin
 keywords:
@@ -7,7 +7,7 @@ keywords:
 - mysql
 - mariadb
 sources:
-- https://github.com/smizy/charts/
+- https://github.com/phpmyadmin/docker
 maintainers:
 - name: smizy
 engine: gotpl
