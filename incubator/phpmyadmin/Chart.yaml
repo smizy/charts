@@ -1,0 +1,13 @@
+name: phpmyadmin
+version: 0.1.0
+appVersion: 4.7.3
+description: phpmyadmin
+keywords:
+- phpmyadmin
+- mysql
+- mariadb
+sources:
+- https://github.com/smizy/charts/
+maintainers:
+- name: smizy
+engine: gotpl
