@@ -1,8 +1,8 @@
-# Default values for phpmyadmin.
+# Default values for mosquitto.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-image: smizy/mosquitto:1.4.12-alpine
+image: eclipse-mosquitto:1.4.12
 
 imagePullPolicy: IfNotPresent
 
