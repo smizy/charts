@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   mosquitto:
   - appVersion: 1.4.12
-    created: 2017-08-04T10:43:53.397755886+09:00
+    created: 2017-08-04T11:49:07.751901+09:00
     description: Mosquitto
-    digest: 7b259c13ac00c7fbef8e70eae58a46400c54641a1d79aae4d63ab4b10a410a47
+    digest: 4b11eb6b20b2bf426a99c2053304cca8ba9cd8803fb143396c6db260f142003e
     engine: gotpl
     keywords:
     - mosquitto
@@ -16,4 +16,22 @@ entries:
     urls:
     - https://smizy.github.io/charts/mosquitto-0.1.0.tgz
     version: 0.1.0
-generated: 2017-08-04T10:43:53.397187086+09:00
+  phpmyadmin:
+  - appVersion: 4.7.3
+    created: 2017-08-04T11:49:07.752207984+09:00
+    description: phpmyadmin
+    digest: 5d358580882d749ecb777a4ce4782872306cdfdb7c8389d3126f47b7b9582d4a
+    engine: gotpl
+    keywords:
+    - phpmyadmin
+    - mysql
+    - mariadb
+    maintainers:
+    - name: smizy
+    name: phpmyadmin
+    sources:
+    - https://github.com/smizy/charts/
+    urls:
+    - https://smizy.github.io/charts/phpmyadmin-0.1.0.tgz
+    version: 0.1.0
+generated: 2017-08-04T11:49:07.75127546+09:00
