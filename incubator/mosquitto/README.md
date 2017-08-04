@@ -6,12 +6,13 @@
 ## TL;DR;
 
 ```bash
-$ helm install incubator/mosquitto
+$ helm repo add smizy https://smizy.github.io/charts
+$ helm install smizy/mosquitto
 ```
 
 ## Introduction
 
-This chart bootstraps a [mosquitto](https://github.com/smizy/docker-mosquitto) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [mosquitto](https://github.com/eclipse/mosquitto) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 ## Prerequisites
 
@@ -46,22 +47,20 @@ The following tables lists the configurable parameters of the mosquitto chart an
 
 |         Parameter          |                Description                 |                   Default                   |
 |----------------------------|--------------------------------------------|---------------------------------------------|
-| `image`                    | mosquitto image                            | `smizy/mosquitto:{VERSION}`                   |
+| `image`                    | mosquitto image                            | `eclipse/mosquitto:{VERSION}`                   |
 | `imagePullPolicy`          | Image pull policy.                         | `IfNotPresent`                              |
 | `persistence.enabled`      | Use a PVC to persist data                  | `true`                                      |
 | `persistence.storageClass` | Storage class of backing PVC               | `standard`  |
 | `persistence.accessMode`   | Use volume as ReadOnly or ReadWrite        | `ReadWriteOnce`                             |
 | `persistence.size`         | Size of data volume                        | `2Gi`                                       |
 | `resources`                | CPU/Memory resource requests/limits        | Memory: `100Mi`, CPU: `50m`                |
-| `config`                   | Multi-line string for mosquitto.conf configuration | `nil`                                       |
-
-The above parameters map to the env variables defined in [smizy/mosquitto](http://github.com/smizy/docker-mosquitto). For more information please refer to the [smizy/mosquitto](http://github.com/smizy/mosquitto) image documentation.
+| `config`                   | Multi-line string for mosquitto.conf configuration | see below                                       |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```bash
 $ helm install --name my-release \
-  --set imagePullPolicy=Always incubator/mosquitto
+  --set imagePullPolicy=Always smizy/mosquitto
 ```
 
 The above command sets the mosquitto imagePullPolicy to `Always`.
@@ -69,20 +68,20 @@ The above command sets the mosquitto imagePullPolicy to `Always`.
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-$ helm install --name my-release -f values.yaml incubator/mosquitto
+$ helm install --name my-release -f values.yaml smizy/mosquitto
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
 
-<!--
-### Custom my.cnf configuration
+
+### Custom mosquitto.cnf configuration
 
 The mosquitto image allows you to provide a custom `mosquitto.cnf` file for configuring mosquitto.
 This Chart uses the `config` value to mount a custom `mosquitto.cnf` using a [ConfigMap](http://kubernetes.io/docs/user-guide/configmap/).
 You can configure this by creating a YAML file that defines the `config` property as a multi-line string in the format of a `mosquitto.cnf` file.
 For example:
 
-```bash
+```sh
 cat > mosquitto-values.yaml <<EOF
 config: |-
   log_dest stdout
@@ -91,12 +90,11 @@ config: |-
   protocol websockets
 EOF
 
-helm install --name my-release -f mosquitto-values.yaml incubator/mosquitto
+helm install --name my-release -f mosquitto-values.yaml smizy/mosquitto
 ```
--->
 
 ## Persistence
 
-The [smizy mosquitto](https://github.com/smizy/docker-mosquitto) image stores the mosquitto data and configurations at the `/mosquitto/data` path of the container.
+The [mosquitto](https://hub.docker.com/r/_/eclipse-mosquitto/) image stores the mosquitto data and configurations at the `/mosquitto/data` path of the container.
 
 The chart mounts a [Persistent Volume](kubernetes.io/docs/user-guide/persistent-volumes/) volume at this location. The volume is created using dynamic volume provisioning.
