@@ -24,7 +24,7 @@ This chart bootstraps a [mosquitto](https://github.com/eclipse/mosquitto) deploy
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release incubator/mosquitto
+$ helm install --name my-release smizy/mosquitto
 ```
 
 The command deploys mosquitto on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
