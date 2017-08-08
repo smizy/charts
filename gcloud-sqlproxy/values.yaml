@@ -31,9 +31,9 @@ cloudsql:
   ## PostgreSQL port 5432 or MySQL port 3306, or other port you set for your SQL instance
   port: 5432
 
-  user:
-  password:
-  rootPassword:
+cloudsqlUser:
+cloudsqlPassword:
+cloudsqlRootPassword:
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/

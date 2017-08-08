@@ -54,9 +54,9 @@ The following tables lists the configurable parameters of the Drupal chart and t
 | `serviceAccountKey`               | Service account key JSON file          | Must be provided and base64 encoded                       |
 | `cloudsql.instance`               | PostgreSQL/MySQL instance name         | `project:region:instance` must be provided                |
 | `cloudsql.port`                   | PostgreSQL/MySQL instance port         | `5432`                                                    |
- `cloudsql.user`                    | PostgreSQL/MySQL user                         |                                                           |
-| `cloudsql.password`                    | PostgreSQL/MySQL password                          |  
-| `cloudsql.rootPassword`                    | PostgreSQL/MySQL root password                          |                                                          |
+ `cloudsqlUser`                    | PostgreSQL/MySQL user                         |                                                           |
+| `cloudsqlPassword`                    | PostgreSQL/MySQL password                          |  
+| `cloudsqlRootPassword`                    | PostgreSQL/MySQL root password                          |                                                          |
 | `resources`                       | CPU/Memory resource requests/limits    | Memory: `100/150Mi`, CPU: `100/150m`                      |
 | `nodeSelector`                    | Node Selector                          |                                                           |
 |
