@@ -1,8 +1,29 @@
 apiVersion: v1
 entries:
+  gcloud-sqlproxy:
+  - created: 2017-08-08T17:57:46.269867309+09:00
+    description: Google Cloud SQL Proxy
+    digest: c0330f476d692cb153db767b6d75b4c2c43e7f3cdc8d18f2b9e0d59d076da6a1
+    engine: gotpl
+    home: https://cloud.google.com/sql/docs/postgres/sql-proxy
+    keywords:
+    - google
+    - cloud
+    - postgresql
+    - mysql
+    - sql
+    - sqlproxy
+    maintainers:
+    - name: smizy
+    name: gcloud-sqlproxy
+    sources:
+    - https://github.com/rimusz/charts
+    urls:
+    - https://smizy.github.io/charts/gcloud-sqlproxy-0.1.0.tgz
+    version: 0.1.0
   mosquitto:
   - appVersion: 1.4.12
-    created: 2017-08-04T15:50:11.121108929+09:00
+    created: 2017-08-08T17:57:46.270305525+09:00
     description: Mosquitto
     digest: 15a0417b39eb95746f5cf745daa799d994e81362d670404c2e3ec7f5d0834702
     engine: gotpl
@@ -17,7 +38,7 @@ entries:
     - https://smizy.github.io/charts/mosquitto-0.1.3.tgz
     version: 0.1.3
   nfs-provisioner:
-  - created: 2017-08-04T15:50:11.12148389+09:00
+  - created: 2017-08-08T17:57:46.270704453+09:00
     description: nfs-provisioner
     digest: 6336fa8182750c703e383b51e96c43f000625dd7fa2ce854a1fad4656a14f281
     engine: gotpl
@@ -33,7 +54,7 @@ entries:
     version: 0.1.0
   phpmyadmin:
   - appVersion: 4.7.3
-    created: 2017-08-04T15:50:11.121799078+09:00
+    created: 2017-08-08T17:57:46.271143932+09:00
     description: phpmyadmin
     digest: 90b8ae5b61e3d36cc1e6cf0697226bacbbff8c8692c41c1e4958e8abf75137bf
     engine: gotpl
@@ -49,4 +70,4 @@ entries:
     urls:
     - https://smizy.github.io/charts/phpmyadmin-0.1.2.tgz
     version: 0.1.2
-generated: 2017-08-04T15:50:11.120546184+09:00
+generated: 2017-08-08T17:57:46.267370597+09:00
