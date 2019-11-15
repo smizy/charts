@@ -6,9 +6,6 @@ image: smizy/mosquitto:1.4.12-alpine
 
 imagePullPolicy: IfNotPresent
 
-ingress:
-  enabled: false
-
 service:
   enabled: true
   type: "ClusterIP"
@@ -18,11 +15,27 @@ persistence:
   accessMode: ReadWriteOnce
   size: 2Gi
   storageClass: standard
-  
-resources:
-  requests:
-    cpu: 50m
-    memory: 100Mi
+
+deployment:
+  hostNetwork: false
+  probes:
+    livenessProbe:
+      tcpSocket:
+        port: 9090
+      initialDelaySeconds: 5
+      periodSeconds: 1
+    readinessProbe:
+      tcpSocket:
+        port: 9090
+      initialDelaySeconds: 3
+      periodSeconds: 3
+  resources:
+    requests:
+      cpu: 50m
+      memory: 100Mi
+    limits:
+      cpu: 100m
+      memory: 256Mi
 
 config: |-
   log_dest stdout

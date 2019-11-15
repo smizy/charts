@@ -86,7 +86,7 @@ cat > mosquitto-values.yaml <<EOF
 config: |-
   log_dest stdout
   listener 1883
-  listener 9090 
+  listener 9090
   protocol websockets
 EOF
 

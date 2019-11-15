@@ -1,17 +1,24 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ template "fullname" . }}
   labels:
-    app: {{ template "fullname" . }}
+    app: {{ template "name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
+  selector:
+    matchLabels:
+      app: {{ template "fullname" . }}
+      release: {{ .Release.Name }}
   strategy:
     type: Recreate
   template:
+    hostNetwork: {{ .Values.deployment.hostNetwork }}
     metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       labels:
         app: {{ template "fullname" . }}
         release: {{ .Release.Name }}
@@ -25,7 +32,6 @@ spec:
           name: "mqtt"
         - containerPort: 9090
           name: "websocket"
-
         volumeMounts:
           - name: mosquitto-conf
             mountPath: /mosquitto/config/mosquitto.conf
@@ -34,8 +40,13 @@ spec:
           - name: mosquitto-data
             mountPath: /mosquitto/data
             subPath: mosquitto/data
+        {{- with .Values.deployment.probes }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
+        {{- with .Values.deployment.resources }}
         resources:
-{{ toYaml .Values.resources | indent 10 }}
+          {{- toYaml . | nindent 10 }}
+        {{- end }}
       volumes:
       - name: mosquitto-conf
         configMap:
