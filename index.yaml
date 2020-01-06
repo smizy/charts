@@ -1,7 +1,7 @@
 apiVersion: v1
 entries:
   gcloud-sqlproxy:
-  - created: 2019-12-17T11:45:03.037041+09:00
+  - created: 2020-01-06T16:25:33.186475+09:00
     description: Google Cloud SQL Proxy
     digest: a88c9dc2e5e4a4b1361250ae8baaa62e57b93dae0a44e6d2352ed4f7d9da4a9c
     engine: gotpl
@@ -25,7 +25,23 @@ entries:
   mosquitto:
   - apiVersion: v1
     appVersion: 1.4.15
-    created: 2019-12-17T11:45:03.058762+09:00
+    created: 2020-01-06T16:25:33.268995+09:00
+    description: Mosquitto
+    digest: 523ed391415cf6e18e8531542f1774931330124b8827e054eec34e603fbdff31
+    engine: gotpl
+    keywords:
+    - mosquitto
+    maintainers:
+    - name: smizy
+    name: mosquitto
+    sources:
+    - https://github.com/smizy/docker-mosquitto
+    urls:
+    - https://smizy.github.io/charts/mosquitto-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v1
+    appVersion: 1.4.15
+    created: 2020-01-06T16:25:33.263175+09:00
     description: Mosquitto
     digest: e6770ad247cdd583faad6b92c5538673050ef8c856c2578e6c788885052b1395
     engine: gotpl
@@ -41,7 +57,7 @@ entries:
     version: 0.1.5
   - apiVersion: v1
     appVersion: 1.4.12
-    created: 2019-12-17T11:45:03.053755+09:00
+    created: 2020-01-06T16:25:33.238579+09:00
     description: Mosquitto
     digest: adb122a7989ba69985dba6973abc25165eb359c880df8ef25ac3387252e8fccf
     engine: gotpl
@@ -56,7 +72,7 @@ entries:
     - https://smizy.github.io/charts/mosquitto-0.1.4.tgz
     version: 0.1.4
   - appVersion: 1.4.12
-    created: 2019-12-17T11:45:03.047441+09:00
+    created: 2020-01-06T16:25:33.225644+09:00
     description: Mosquitto
     digest: 15a0417b39eb95746f5cf745daa799d994e81362d670404c2e3ec7f5d0834702
     engine: gotpl
@@ -71,7 +87,7 @@ entries:
     - https://smizy.github.io/charts/mosquitto-0.1.3.tgz
     version: 0.1.3
   nfs-provisioner:
-  - created: 2019-12-17T11:45:03.075555+09:00
+  - created: 2020-01-06T16:25:33.287486+09:00
     description: nfs-provisioner
     digest: 6336fa8182750c703e383b51e96c43f000625dd7fa2ce854a1fad4656a14f281
     engine: gotpl
@@ -87,7 +103,7 @@ entries:
     version: 0.1.0
   phpmyadmin:
   - appVersion: 4.7.3
-    created: 2019-12-17T11:45:03.091408+09:00
+    created: 2020-01-06T16:25:33.315608+09:00
     description: phpmyadmin
     digest: 90b8ae5b61e3d36cc1e6cf0697226bacbbff8c8692c41c1e4958e8abf75137bf
     engine: gotpl
@@ -103,4 +119,4 @@ entries:
     urls:
     - https://smizy.github.io/charts/phpmyadmin-0.1.2.tgz
     version: 0.1.2
-generated: 2019-12-17T11:45:03.018219+09:00
+generated: 2020-01-06T16:25:33.14697+09:00
