@@ -15,7 +15,6 @@ spec:
   strategy:
     type: Recreate
   template:
-    hostNetwork: {{ .Values.deployment.hostNetwork }}
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
@@ -23,6 +22,7 @@ spec:
         app: {{ template "fullname" . }}
         release: {{ .Release.Name }}
     spec:
+      hostNetwork: {{ .Values.deployment.hostNetwork }}
       containers:
       - image: {{ .Values.image }}
         imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}

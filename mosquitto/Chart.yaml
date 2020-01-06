@@ -1,6 +1,6 @@
 name: mosquitto
 apiVersion: v1
-version: 0.1.5
+version: 0.1.6
 appVersion: 1.4.15
 description: Mosquitto
 keywords:
